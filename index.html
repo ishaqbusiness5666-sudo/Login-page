@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login page</title>
+    <title>Syntax Station | Member access</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -12,58 +12,60 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <!-- header -->
     <header>
         <nav>
-            <div class="logo">Syntax Station</div>
-            <div class="links">
+            <a class="logo" href="#top" aria-label="Syntax Station home"><span class="logo-mark">S</span> Syntax Station</a>
+            <div class="links" id="site-links">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#top">Home</a></li>
+                    <li><a href="#story">About</a></li>
+                    <li><a href="#member-access">Membership</a></li>
                 </ul>
             </div>
-            <div class="Query">
-                <h2>Have Query?</h2>
-                <input type="text" name="Query" id="query" placeholder="Sdf" />
-            </div>
+            <a class="nav-action" href="#member-access">Join the club <i class="fa-solid fa-arrow-right"></i></a>
+            <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
         </nav>
     </header>
 
-    <!-- main contant -->
-    <main>
-        <article>
-            <!-- for heading -->
-            <h1>Get Membership<br> in <span>Cars</span> Exblition</h1>
-            <!-- for pragph -->
-            <p>A "green Lambo" is a Lamborghini available in a variety of green paint colors,which is a popular choice for its attention-grabbing and striking appearance. These colors range from bright, lime greens to dark, forest greens, and are  offered on many models like the Huracan, Aventador, and Urus SUV.
-            </p>
-            <!-- fot button  -->
-            <button type="button">Our Collection</button>
-            <!-- for icon -->
-             <section>
-                <div class="instagram"><i class="fa-brands fa-instagram"></i></div>
-                <div class="facebook"><i class="fa-brands fa-facebook-f"></i></div>
-                <div class="inlink"><i class="fa-brands fa-linkedin-in"></i></div>
-                <div class="git"><i class="fa-brands fa-github"></i></div>
-                </section>
+    <main id="top">
+        <article id="story">
+            <div class="eyebrow"><span></span> The road is yours</div>
+            <h1>Access the<br><em>extraordinary.</em></h1>
+            <p class="intro">A private circle for people who appreciate rare machines, considered design, and the stories behind every unforgettable drive.</p>
+            <a class="collection-link" href="#member-access">Explore the collection <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            <div class="stats" aria-label="Community highlights">
+                <div><strong>12K</strong><span>members</span></div>
+                <div><strong>48</strong><span>exclusive events</span></div>
+                <div><strong>06</strong><span>cities worldwide</span></div>
+            </div>
+            <div class="socials" aria-label="Social links">
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
         </article>
-        <!-- for logic side -->
-        <aside>
-                <h2>Register Now</h2>
-                <form>
-                    <input type="email" name="userinput" id="email" placeholder="Username" />
-                    <input type="password" name="userpassword" id="password" placeholder="password" />
-                    <input type="password" name="confirm_password" id="confirm-password"
-                        placeholder="Confirm password" />
-                </form>
-                <button type="button">Register</button>
-                <a href="#">Sign up with Google </a>
+        <aside id="member-access">
+            <div class="form-heading">
+                <p class="form-kicker">MEMBER ACCESS</p>
+                <h2>Start your<br><span>next chapter.</span></h2>
+                <p>Join the station and make every mile count.</p>
+            </div>
+            <form id="registration-form" novalidate>
+                <label for="email">Email address</label>
+                <div class="input-wrap"><i class="fa-regular fa-envelope"></i><input type="email" name="email" id="email" placeholder="you@example.com" autocomplete="email" required /></div>
+                <label for="password">Create password</label>
+                <div class="input-wrap"><i class="fa-solid fa-lock"></i><input type="password" name="password" id="password" placeholder="At least 8 characters" minlength="8" autocomplete="new-password" required /><button class="password-toggle" type="button" aria-label="Show password"><i class="fa-regular fa-eye"></i></button></div>
+                <label for="confirm-password">Confirm password</label>
+                <div class="input-wrap"><i class="fa-solid fa-shield-halved"></i><input type="password" name="confirm_password" id="confirm-password" placeholder="Repeat your password" minlength="8" autocomplete="new-password" required /></div>
+                <label class="check-row"><input type="checkbox" id="updates" checked /><span>Send me occasional event updates</span></label>
+                <button class="submit-button" type="submit">Create membership <i class="fa-solid fa-arrow-right"></i></button>
+                <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+            </form>
+            <p class="sign-in">Already a member? <a href="#member-access" id="sign-in-link">Sign in</a></p>
         </aside>
     </main>
     <script src="Script.js"></script>
